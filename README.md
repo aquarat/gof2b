@@ -1,5 +1,8 @@
 # gof2b
 
+![Alt text](console.jpg?raw=true "Console")
+![Alt text](console.jpg?raw=true "winbox.jpg")
+
 gof2b is a simple fail2ban clone that seeks to leverage a Mikrotik gateway router as a means of blocking traffic from misbehaving client IPs. It specifically monitors a docker container running jwilder's nginx reverse proxy and looks for failed attempts to login using wp-login.php.
 
 I've noticed that my Wordpress sites regularly have brute-force login attempts made against them. The bad clients in these cases execute attempts that (1) well-placed delays between attempts, (2) do a GET before a POST, (3) only attempt 4 logins from one IP, (4) use many IPs. These seem to be tailored to avoid fail2ban's default settings. Nasty.
